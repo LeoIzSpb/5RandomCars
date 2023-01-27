@@ -17,8 +17,8 @@ public class CarController {
     public CarController(CarDao carDao) { this.carDao = carDao; }
 
     @GetMapping(value = "/cars")
-    public String index(Model model, @RequestParam(value = "count", defaultValue = "5") int count) {
-        model.addAttribute("cars",carDao.index(count));
+    public String getCarsByCount(Model model, @RequestParam(value = "count", defaultValue = "5") int count) {
+        model.addAttribute("cars",carDao.getCarsByCount(count));
         return "car_index";
     }
 

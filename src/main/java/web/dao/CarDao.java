@@ -23,12 +23,11 @@ public class CarDao {
 
     }
 
-    public List<Car> index(int count) {
+    public List<Car> getCarsByCount(int count) {
         List<Car> cars1 = new ArrayList<>();
-        Random random = new Random();
 
         for ( int i = 0 ; i<count&& i<5 ;i++ ) {
-            cars1.add(cars.get(random.nextInt(5)));
+            cars1.add(cars.get(i));
         }
         return cars1;
     }
