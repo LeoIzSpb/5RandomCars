@@ -5,7 +5,7 @@ import web.model.Car;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 @Component
 public class CarDao {
@@ -24,11 +24,6 @@ public class CarDao {
     }
 
     public List<Car> getCarsByCount(int count) {
-        List<Car> cars1 = new ArrayList<>();
-
-        for ( int i = 0 ; i<count&& i<5 ;i++ ) {
-            cars1.add(cars.get(i));
-        }
-        return cars1;
+        return cars.subList(0,(Math.min(count, 5)));
     }
 }
